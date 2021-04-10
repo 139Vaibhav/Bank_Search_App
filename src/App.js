@@ -60,6 +60,7 @@ export default class App extends React.Component {
       axios
         .get(
           "https://vast-shore-74260.herokuapp.com/banks?city=MUMBAI"
+           + dropDownValue.value
         )
         .then(res => {
           this.setState({ results: res.data, loading: false });
@@ -149,9 +150,9 @@ export default class App extends React.Component {
       </BootstrapTable>
     );
     return (
-      <div class="row" className="hdr">
-        <div class="col-sm-12 btn btn-info">
-          <h1> Banks Search Application </h1>
+      <div className="row" className="hdr">
+        <div className="col-sm-12 btn btn-info">
+          <h1> BankSearch Application </h1>
         </div>
         <div style={{ width: "300px" }}>
           <Select
@@ -166,6 +167,8 @@ export default class App extends React.Component {
           <ReactLoading
             type={"bars"}
             color={"red"}
+            height={"25%"}
+            width={"25%"}
           />
         ) : (
           table
