@@ -59,7 +59,7 @@ export default class App extends React.Component {
     } else {
       axios
         .get(
-          "https://vast-shore-74260.herokuapp.com/banks?city=MUMBAI"
+          "https://vast-shore-74260.herokuapp.com/banks?city="
            + dropDownValue.value
         )
         .then(res => {
